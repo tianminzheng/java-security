@@ -1,0 +1,62 @@
+server:
+  port: 9001
+
+spring:
+  application:
+    name: integration-service
+
+  jackson:
+    time-zone: GMT+8
+    date-format: yyyy-MM-dd HH:mm:ss
+  datasource:
+    dynamic:
+      primary: master
+      strict: false
+      datasource:
+        master:
+          url: jdbc:mysql://localhost:3306/oauth?useUnicode=true&characterEncoding=UTF-8&autoReconnect=true&allowMultiQueries=true&tinyInt1isBit=false&zeroDateTimeBehavior=CONVERT_TO_NULL
+          username: root
+          password: root
+    primary: master
+    type: com.alibaba.druid.pool.DruidDataSource
+    url: jdbc:mysql://localhost:3306/oauth?useUnicode=true&characterEncoding=UTF-8&autoReconnect=true&allowMultiQueries=true&tinyInt1isBit=false&zeroDateTimeBehavior=CONVERT_TO_NULL
+    username: root
+    password: root
+    initial-size: 1
+    min-idle: 1
+    max-active: 10
+    driverClassName: com.mysql.cj.jdbc.Driver
+    max-wait: 60000
+    pool-prepared-statements: true
+    max-pool-prepared-statement-per-connection-size: 20
+    time-between-eviction-runs-millis: 60000
+    min-evictable-idle-time-millis: 300000
+    test-while-idle: true
+    test-on-borrow: false
+    test-on-return: false
+    stat-view-servlet:
+      enabled: true
+      url-pattern: /druid/*
+    filter:
+      stat:
+        log-slow-sql: true
+        slow-sql-millis: 1000
+        merge-sql: true
+      wall:
+        config:
+          multi-statement-allow: true
+  servlet:
+    multipart:
+      max-file-size: 10MB
+mybatis-plus:
+  global-config:
+    db-config:
+      logic-delete-field: isDel #实体名称
+      logic-delete-value: 1 # 已经删除标志值
+      logic-not-delete-value: 0 #未删除标志值
+  mapper-locations: classpath:mapperXml/*Mapper.xml
+
+
+logging:
+  level:
+    com.mooc.medicalcare.integration: debug

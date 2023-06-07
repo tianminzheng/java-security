@@ -1,0 +1,24 @@
+POST http://localhost:9001/user/login
+Content-Type: application/json
+tenant-id: {{adminTenentId}}
+
+{
+  "username": "admin",
+  "password": "admin123",
+  "code": "123"
+}
+
+###
+
+POST http://localhost:9001/user/logout
+Content-Type: application/json
+Authorization: 2bc52bfe62914b288d243b7488d4e8b1
+
+###
+
+
+
+POST http://localhost:9001/token/refresh?refreshToken=09c8b1d59b6243d8ad5754597701aa45&clientId=default
+Content-Type: application/json
+
+###
