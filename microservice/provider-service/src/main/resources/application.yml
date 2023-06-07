@@ -1,0 +1,32 @@
+server:
+  port: 12001
+
+spring:
+  application:
+    name: provider-service
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 127.0.0.1:8848
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+    time-zone: Asia/Shanghai
+
+#security:
+#  oauth2:
+#    client:
+#      client-id: cs_client
+#      client-secret: cs_secret
+#      user-authorization-uri: http://localhost:8080/oauth/authorize
+#      access-token-uri: http://localhost:8080/oauth/token
+#    resource:
+#      jwt:
+#        key-uri: http://localhost:8080/oauth/token_key
+#        key-value: 123456
+
+feign:
+  client:
+    config:
+      default:
+        requestInterceptors:
+          - com.juejin.security.config.interceptor.TokenRelayRequestInterceptor

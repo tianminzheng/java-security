@@ -1,0 +1,8 @@
+POST localhost:8080/oauth/token?client_id=cs_client&client_secret=cs_secret&grant_type=password&username=admin&password=password2&scope=webclient
+
+###
+
+GET localhost:8080/oauth/check_token?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzeXN0ZW0iOiJNaWNyb3NlcnZpY2UgU3lzdGVtIiwidXNlcl9uYW1lIjoiYWRtaW4iLCJzY29wZSI6WyJ3ZWJjbGllbnQiXSwiZXhwIjoxNjg0OTU3NDk2LCJhdXRob3JpdGllcyI6WyJST0xFX0FETUlOIiwiUk9MRV9VU0VSIl0sImp0aSI6IjRiNWVjYzJiLWU3ZWYtNGYzZi1iYzVhLWUwYzY2OGZkMmIyMyIsImNsaWVudF9pZCI6ImNzX2NsaWVudCJ9.t3m7BOXis5uNf0kBwD_rGIJIAi5xa7YuKmnYzA85OBo
+
+
+###
